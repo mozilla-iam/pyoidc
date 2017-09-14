@@ -36,12 +36,15 @@ def redacted(key, value):
 
 
 def sanitize(potentially_sensitive):
-    if isinstance(potentially_sensitive, Mapping):
-        # Makes new dict so we don't modify the original
-        # Also case-insensitive--possibly important for HTTP headers.
-        return dict(
-            redacted(k.lower(), v) for k, v in potentially_sensitive.items())
-    else:
-        potentially_sensitive = str(potentially_sensitive)
-        return SANITIZE_REGEX.sub(r'\1{}'.format(REPLACEMENT),
-                                  potentially_sensitive)
+    try:
+        if isinstance(potentially_sensitive, Mapping):
+            # Makes new dict so we don't modify the original
+            # Also case-insensitive--possibly important for HTTP headers.
+            return dict(
+                redacted(k.lower(), v) for k, v in potentially_sensitive.items())
+        else:
+            potentially_sensitive = str(potentially_sensitive)
+            return SANITIZE_REGEX.sub(r'\1{}'.format(REPLACEMENT),
+                                      potentially_sensitive)
+    except Exception as e:
+        pass
