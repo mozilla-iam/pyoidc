@@ -26,6 +26,7 @@ The format is based on the [KeepAChangeLog] project.
 - [#446] Fixed provider.read_registration
 - [#449] Fixed creation of error_response on client registration
 - [#145] Successful token endpoint responses have correct no-cache headers
+- [#352] Fixed broken windows test for ``test_provider_key_setup``. 
 
 [#430]: https://github.com/OpenIDC/pyoidc/pull/430
 [#427]: https://github.com/OpenIDC/pyoidc/pull/427
@@ -38,6 +39,7 @@ The format is based on the [KeepAChangeLog] project.
 [#457]: https://github.com/OpenIDC/pyoidc/issues/457
 [#145]: https://github.com/OpenIDC/pyoidc/issues/145
 [#471]: https://github.com/OpenIDC/pyoidc/issues/471
+[#352]: https://github.com/OpenIDC/pyoidc/issues/352
 
 ## 0.12.0 [2017-09-25]
 
