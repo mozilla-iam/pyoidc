@@ -5,22 +5,13 @@ The format is based on the [KeepAChangeLog] project.
 
 [KeepAChangeLog]: http://keepachangelog.com/
 
-## 0.X.X [Unreleased]
+
+## 0.13.1 [Unreleased]
 
 ### Fixed
-- [#503] Fix error on UserInfo endpoint for removed clients
-- [#508] JWT now uses verify keys for JWT verification
+- [#515]: Fix arguments to WSGI start_response
 
-### Removed
-- [#494] Methods and functions deprecated in previous releases have been removed
-
-### Added
-- [#496] Ability to specify additional supported scopes for oic.Provider
-
-[#494]: https://github/com/OpenIDC/issues/494
-[#496]: https://github.com/OpenIDC/pyoidc/issues/496
-[#503]: https://github.com/OpenIDC/pyoidc/issues/503
-[#508]: https://github.com/OpenIDC/pyoidc/issues/508
+[#515]: https://github.com/OpenIDC/pyoidc/issues/515
 
 ## 0.13.0 [2018-02-19]
 
