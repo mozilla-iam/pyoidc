@@ -353,9 +353,11 @@ class Message(MutableMapping):
                 if vtyp is bool:
                     self._dict[skey] = val
                 else:
-                    raise ValueError(
-                        '"{}", wrong type of value for "{}"'.format(val, skey)
-                    )
+                    pass
+                    logger.warn('"{}", wrong type of value for "{}"'.format(val, skey))
+                    #raise ValueError(
+                    #    '"{}", wrong type of value for "{}"'.format(val, skey)
+                    #)
             elif isinstance(val, vtyp):  # Not necessary to do anything
                 self._dict[skey] = val
             else:
