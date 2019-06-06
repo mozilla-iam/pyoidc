@@ -370,15 +370,19 @@ class Message(MutableMapping):
                     try:
                         self._dict[skey] = int(val)
                     except (ValueError, TypeError):
-                        raise ValueError(
-                            '"{}", wrong type of value for "{}"'.format(val, skey)
-                        )
+                        logger.warn('"{}", wrong type of value for "{}"'.format(val, skey))
+                        pass
+                        #raise ValueError(
+                        #    '"{}", wrong type of value for "{}"'.format(val, skey)
+                        #)
                     else:
                         return
                 elif vtyp is bool:
-                    raise ValueError(
-                        '"{}", wrong type of value for "{}"'.format(val, skey)
-                    )
+                    logger.warn('"{}", wrong type of value for "{}"'.format(val, skey))
+                    pass
+                    #raise ValueError(
+                    #    '"{}", wrong type of value for "{}"'.format(val, skey)
+                    #)
 
                 if isinstance(val, str):
                     self._dict[skey] = val
